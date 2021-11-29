@@ -1,0 +1,9 @@
+<h3>Shipping Options</h3>
+<!-- add class if is selectedShippingOption
+add click handler -->
+
+<span *ngFor="let option of shippingOptions"
+	[ngClass]="{'shipping-item': true, 'selected': option.type === selectedShippingOption.type}"
+	(click)="onOptionClick(option)">
+	<h3>{{ option.type }}: {{ option.price | currency }}</h3>
+</span>

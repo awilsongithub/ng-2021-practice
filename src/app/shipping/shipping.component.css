@@ -1,0 +1,8 @@
+.shipping-item {
+  width: unset;
+  min-width: unset;
+  background-color: #eeeeee;
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  padding: 0px 15px;
+}

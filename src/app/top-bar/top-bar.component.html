@@ -1,0 +1,38 @@
+<!-- <a [routerLink]="['/']">
+	<h1>My Store</h1>
+</a>
+
+<div>
+	<a
+		[routerLink]="['/http']"
+		[ngStyle]="{color: 'white'}"
+	>
+		Http Practice
+	</a>
+
+	<a
+		class="button fancy-button"
+		[routerLink]="['/cart']"
+	><i class="material-icons">shopping_cart</i>Checkout</a>
+</div> -->
+
+<mat-toolbar
+	color="primary"
+	class="d-flex justify-content-between"
+>
+	<span [routerLink]="['/']">NG 2021</span>
+	<span>
+		<a
+			[routerLink]="['/http']"
+			class="mat-toolbar__link"
+		>
+			Http Practice
+		</a>
+
+		<a
+			[routerLink]="['/cart']"
+			class="mat-toolbar__link"
+		>Checkout</a>
+	</span>
+
+</mat-toolbar>

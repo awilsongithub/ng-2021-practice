@@ -1,0 +1,54 @@
+<!-- <button (click)="getPostsPage2()">Get Page 2 Posts</button> -->
+<button
+	(click)="getPosts()"
+	mat-stroked-button
+	class="mt-3 me-2"
+>Get All Posts</button>
+
+<button
+	(click)="getPaginatedPosts()"
+	mat-stroked-button
+	class="mt-3 me-2"
+>Get Paginated Posts</button>
+
+<button
+	(click)="addPost()"
+	mat-stroked-button
+	class="mt-3 me-2"
+>Add Post</button>
+
+<button
+	(click)="updatePost()"
+	mat-stroked-button
+	class="mt-3"
+>Update First Post</button>
+
+<div class="card my-3">
+	<form [formGroup]="searchForm">
+
+		<mat-form-field
+			appearance="fill"
+			class="w-100"
+		>
+			<input
+				matInput
+				placeholder="Search for posts by keyword..."
+				formControlName="keyword"
+			>
+		</mat-form-field>
+
+	</form>
+</div>
+
+<mat-card
+	*ngFor="let post of posts"
+	class="my-3"
+>
+	<mat-card-title>
+		{{post.title}}
+	</mat-card-title>
+	<mat-card-content>
+		<p>{{post.body}}</p>
+	</mat-card-content>
+
+</mat-card>

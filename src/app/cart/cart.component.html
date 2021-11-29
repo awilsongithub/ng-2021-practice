@@ -1,0 +1,56 @@
+<h1>Your Shopping Cart </h1>
+<p>Checkout expires in {{timeLeft}} seconds</p>
+
+<h3>Items</h3>
+
+<div *ngIf="items.length > 0; else noItems">
+	<div
+		*ngFor="let item of items"
+		class="cart-item"
+	>
+		<h4>{{ item.name }} {{ item.price | currency }}</h4>
+		<p *ngIf="item.description">Description: {{ item.description }}</p>
+	</div>
+</div>
+
+<ng-template #noItems>
+	<p>No items in your cart yet</p>
+</ng-template>
+
+<app-shipping
+	[shippingOptions]="shippingOptions"
+	[selectedShippingOption]="selectedShippingOption"
+	(shippingOptionSelected)="onShippingOptionSelected($event)"
+></app-shipping>
+
+<h3>Total Price: {{totalPrice | currency }}</h3>
+
+<!-- addd form with input formGroup = form and (ngSubmit)=handler
+	inputs have formControlName and id with same values plus labels -->
+<form
+	[formGroup]="checkoutForm"
+	(ngSubmit)="onSubmit()"
+>
+
+	<div><label for="name">Enter Your Name</label><input
+			type="text"
+			id="name"
+			formControlName="name"
+		></div>
+	<div><label for="address">Enter Shipping Address</label><input
+			type="text"
+			id="address"
+			formControlName="address"
+		>
+	</div>
+	<button
+		class="button"
+		type="submit"
+	>Purchase</button>
+
+</form>
+<br>
+<button (click)="subscribeCObs()">Subscribe to Custom Observable</button>
+<br>
+<br>
+<button (click)="unsubscribe()">Unsubscribe</button>

@@ -1,0 +1,8 @@
+<ul
+	*ngIf="pageVisits.length"
+	class="page-visits"
+>
+	<li *ngFor="let visit of pageVisits">
+		<p>Page: {{visit.page}} Time: {{visit.time}}</p>
+	</li>
+</ul>

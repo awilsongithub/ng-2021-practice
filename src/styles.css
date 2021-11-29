@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap-grid";
+@import "~bootstrap/dist/css/bootstrap-reboot";
+@import "~bootstrap/dist/css/bootstrap-utilities";
+
+.mat-toolbar .mat-toolbar__link {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
